@@ -1,0 +1,79 @@
+.home-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .hero-section {
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+    padding: 50px 20px;
+  }
+  
+  .hero-section h1 {
+    margin: 0;
+    font-size: 48px;
+  }
+  
+  .hero-section p {
+    font-size: 24px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #61dafb;
+    color: #282c34;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  
+  .featured-problems, .upcoming-contests, .leaderboard {
+    margin: 40px 0;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .problems-list, .contests-list, .leaderboard-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .problem-card, .contest-card, .coder-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .problem-card:hover, .contest-card:hover, .coder-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .problem-card a, .contest-card a, .coder-card a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .problem-card h3, .contest-card h3, .coder-card h3 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .problem-card p, .contest-card p, .coder-card p {
+    font-size: 16px;
+    color: #777;
+  }
+  

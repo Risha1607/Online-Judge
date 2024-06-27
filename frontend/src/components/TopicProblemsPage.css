@@ -1,0 +1,53 @@
+.topic-problems-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.topic-problems-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.problems-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.problems-table thead {
+  background-color: #f4f4f4;
+}
+
+.problems-table th, .problems-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: black;
+}
+.problems-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.problems-table tr:nth-child(odd) {
+  background-color: #e6f7ff;}
+
+.problems-table th {
+  background-color: #f4f4f4;
+}
+
+.problems-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 24px;
+  color: #666;
+}
+
+
+
+  
