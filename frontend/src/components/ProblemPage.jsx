@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import TopicCard from './TopicCard';
 import problems from '../problem';
 import './ProblemPage.css';
@@ -9,15 +8,12 @@ const ProblemPage = () => {
   return (
     <div className="problem-page">
       {Object.keys(problems).map((topicKey) => (
-        <Link to={`/problems/topic/${problems[topicKey].key}`} key={topicKey}>
-          <TopicCard topic={problems[topicKey]} />
-        </Link>
+        <TopicCard key={topicKey} topic={problems[topicKey]} />
       ))}
     </div>
   );
 };
 
 export default ProblemPage;
-
 
 

@@ -1,19 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './HomePage.css'; // Make sure to create and style this CSS file
+import './HomePage.css';
 
 const HomePage = () => {
   return (
     <div className="home-page">
       <header className="hero-section">
-        <h1>Welcome to CodeConquest</h1>
-        <p>Compete, Code, Conquer</p>
-        <Link to="/LoginUI" className="cta-button">Get Started</Link>
+        <div className="hero-content">
+          <h1>Welcome to CodeConquest</h1>
+          <p>Compete, Code, Conquer</p>
+          <Link to="/login" className="cta-button">Get Started</Link>
+        </div>
       </header>
-      <section className="featured-problems">
+      <section className="introduction">
+        <h2>About CodeConquest</h2>
+        <p>
+          CodeConquest is an interactive platform where you can improve your coding skills by solving problems and competing in contests. Whether you're a beginner looking to learn the basics or an advanced coder aiming to hone your skills, CodeConquest offers a variety of challenges that will help you grow. Join our community and start your journey to become a coding master today!
+        </p>
+      </section>
+      <section className="section-box">
         <h2>Featured Problems</h2>
         <div className="problems-list">
-          {/* Example of featured problems. Replace with actual data */}
           <div className="problem-card">
             <Link to="/problems/1">
               <h3>Two Sum</h3>
@@ -34,28 +41,26 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="upcoming-contests">
+      <section className="section-box">
         <h2>Upcoming Contests</h2>
         <div className="contests-list">
-          {/* Example of upcoming contests. Replace with actual data */}
-          <div className="contest-card">
+          <div className="contesthome-card">
             <Link to="/contests/1">
               <h3>Weekly Coding Contest #1</h3>
-              <p>Date: 2023-07-01</p>
+              <p>Date: 2024-07-01</p>
             </Link>
           </div>
-          <div className="contest-card">
+          <div className="contesthome-card">
             <Link to="/contests/2">
               <h3>Monthly Challenge: July</h3>
-              <p>Date: 2023-07-15</p>
+              <p>Date: 2024-07-15</p>
             </Link>
           </div>
         </div>
       </section>
-      <section className="leaderboard">
+      <section className="section-box">
         <h2>Top Coders</h2>
         <div className="leaderboard-list">
-          {/* Example of top coders. Replace with actual data */}
           <div className="coder-card">
             <Link to="/profile/1">
               <h3>CoderOne</h3>
@@ -81,3 +86,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

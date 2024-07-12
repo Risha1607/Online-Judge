@@ -1,35 +1,51 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-      console.log('User loaded from localStorage:', JSON.parse(storedUser));
-    }
-    setLoading(false); // Set loading to false after checking localStorage
+    const checkLoggedIn = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const response = await axios.get('http://localhost:8000/auth/user', {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          setUser(response.data);
+        } catch (error) {
+          console.error('Error checking logged in status:', error);
+          localStorage.removeItem('token');
+        }
+      }
+      setLoading(false);
+    };
+    checkLoggedIn();
   }, []);
 
-  const login = (userData) => {
+  const login = (userData, token) => {
+    localStorage.setItem('token', token);
     setUser(userData);
-    console.log('User logged in:', userData);
+    navigate('/problems', { replace: true });
   };
 
   const logout = () => {
-    setUser(null);
-    localStorage.removeItem('user');
     localStorage.removeItem('token');
-    console.log('User logged out');
+    setUser(null);
+    navigate('/login', { replace: true });
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
-      {children}
+    <AuthContext.Provider value={{ user, login, logout }}>
+      <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+        {!loading && children}
+      </GoogleOAuthProvider>
     </AuthContext.Provider>
   );
 };

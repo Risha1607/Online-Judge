@@ -33,6 +33,7 @@
 .card-description {
   font-size: 1rem; /* Adjust font size for description */
   margin-top: 10px;
+ 
 }
 
 .card-meta {
@@ -42,6 +43,9 @@
   font-size: 0.875rem; /* Smaller font for metadata */
   color: #555;
 }
-
+.topic-card-link {
+  text-decoration: none;
+  color: inherit;
+}
 
   

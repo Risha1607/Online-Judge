@@ -1,0 +1,87 @@
+/* General layout */
+.problem-details-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 100px; /* Adjusted to ensure space below the navbar */
+  }
+  
+  .problem-description,
+  .code-editor {
+    background: #fff;
+    color: #000;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 80vh; /* Adjust height as needed */
+    width: 45%; /* Adjust width as needed */
+  }
+  
+  select {
+    margin-bottom: 10px;
+  }
+  
+  .editor-container,
+  .input-container {
+    margin-top: 10px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    font-family: "Fira code", "Fira Mono", monospace;
+    font-size: 12px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  
+  .output {
+    margin-top: 20px;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .output pre {
+    margin: 0;
+  }
+  
+  .example-box {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Changed to fixed to stay at the top */
+    top: 80px; /* Adjusted to ensure space below the navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2d2d2d;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .timer-container svg {
+    margin-right: 10px;
+  }
+  

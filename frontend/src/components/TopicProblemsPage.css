@@ -1,6 +1,6 @@
 .topic-problems-page {
   padding: 20px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }
@@ -9,11 +9,15 @@
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  font-size: 2rem; /* Smaller heading */
 }
 
 .problems-table {
   width: 100%;
   border-collapse: collapse;
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
 }
 
 .problems-table thead {
@@ -21,20 +25,23 @@
 }
 
 .problems-table th, .problems-table td {
-  padding: 10px;
+  padding: 15px; /* Increased padding for better readability */
   text-align: left;
   border-bottom: 1px solid #ddd;
   color: black;
 }
+
 .problems-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
 .problems-table tr:nth-child(odd) {
-  background-color: #e6f7ff;}
+  background-color: #e6f7ff;
+}
 
 .problems-table th {
   background-color: #f4f4f4;
+  font-size: 1rem; /* Slightly larger font size */
 }
 
 .problems-table tr:hover {
@@ -47,7 +54,3 @@
   font-size: 24px;
   color: #666;
 }
-
-
-
-  

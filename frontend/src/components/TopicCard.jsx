@@ -5,8 +5,8 @@ import './TopicCard.css';
 
 const TopicCard = ({ topic }) => {
   return (
-    <Card className="topic-card">
-      <Link to={`/problems/topic/${topic.key}`}>
+    <Link to={`/problems/topic/${topic.key}`} className="topic-card-link">
+      <Card className="topic-card">
         <Card.Img variant="top" src={topic.image} alt={topic.title} className="topic-image" />
         <Card.Body>
           <Card.Title>{topic.title}</Card.Title>
@@ -16,8 +16,8 @@ const TopicCard = ({ topic }) => {
             <span>{topic.items} Items</span>
           </div>
         </Card.Body>
-      </Link>
-    </Card>
+      </Card>
+    </Link>
   );
 };
 

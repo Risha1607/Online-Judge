@@ -8,3 +8,18 @@
   
   
   
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.clock-icon {
+  margin-right: 10px;
+  color: #ffcc00; /* You can change the color to your preference */
+}

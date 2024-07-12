@@ -34,7 +34,7 @@ const TopicProblemsPage = () => {
                 <thead>
                     <tr>
                         <th>Title</th>
-                        <th>Description</th>
+                       
                         <th>Difficulty</th>
                     </tr>
                 </thead>
@@ -44,7 +44,7 @@ const TopicProblemsPage = () => {
                             <td>
                                 <Link to={`/problem/${problem._id}`}>{problem.title}</Link>
                             </td>
-                            <td>{problem.description}</td>
+                            
                             <td>{problem.difficulty}</td>
                         </tr>
                     ))}

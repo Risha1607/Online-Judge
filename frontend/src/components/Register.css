@@ -1,35 +1,64 @@
- body{
-    font-family: Arial, sans-serif;
-    background: white;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
- }
- .register-content{
-    box-sizing: border-box;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-    width: 400px; 
-    height: auto; 
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(180deg, #4f69ac, #4b7fbf);
+  }
+  
+  .register-box {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background-color: #1c1c2b;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .register-cartoon {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    align-items: 'center';
-    padding: 16px; 
-    margin-left: 700px;
-    height: auto;
-
-
-    background-color: #2c2c3b;
-
-
-}
-.register-cartoon{
-    
-    display: 'flex';
-    justify-content: 'center';
-    align-items: 'center';
-    flex-direction: 'column';
-    margin-right: 5;
-}
-
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1c2b;
+  }
+  
+  .register-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+  }
+  
+  .welcome-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .register-button {
+    margin-top: 20px;
+    background-color: #6c63ff;
+  }
+  
+  .register-button:hover {
+    background-color: #5753c9;
+  }
+  
+  .signup-link {
+    color: #6c63ff;
+    display: block;
+    text-align: center;
+  }
+  
+  .tagline {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #c1c1c1;
+  }
+  

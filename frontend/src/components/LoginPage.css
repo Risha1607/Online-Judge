@@ -1,11 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #c3d5ff, #8080fa);
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
   
 
   
@@ -49,11 +42,22 @@ body {
     text-align: center;
   }
   
-  .login-button {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: #6c63ff;
-  }
+/* LoginPage.css */
+.login-button {
+  background-color: #4B7FBF; /* Change this to the bluish color you prefer */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #3a6aa8; /* Slightly darker blue for hover effect */
+}
+
   
   .social-button {
     margin: 0 10px;
@@ -63,6 +67,6 @@ body {
   }
   
   .social-button:hover {
-    color: #6c63ff;
+    color: #3c33e0;
   }
   

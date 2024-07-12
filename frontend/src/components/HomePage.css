@@ -46,7 +46,7 @@
     flex-wrap: wrap;
   }
   
-  .problem-card, .contest-card, .coder-card {
+  .problem-card, .contesthome-card, .coder-card {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -58,21 +58,9 @@
     transition: transform 0.2s;
   }
   
-  .problem-card:hover, .contest-card:hover, .coder-card:hover {
-    transform: scale(1.05);
-  }
+
   
-  .problem-card a, .contest-card a, .coder-card a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .problem-card h3, .contest-card h3, .coder-card h3 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .problem-card p, .contest-card p, .coder-card p {
+  .problem-card p,.contesthome-card, .coder-card p {
     font-size: 16px;
     color: #777;
   }

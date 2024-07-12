@@ -1,0 +1,60 @@
+.admin-dashboard {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .admin-dashboard h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem; /* Smaller heading */
+  }
+  
+  .admin-table {
+    width: 600px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+  }
+  
+  .admin-table th, .admin-table td {
+    padding: 20px; /* Increased padding for better readability */
+    text-align: center; /* Center align text */
+    border-bottom: 1px solid #ddd;
+    color: #333;
+  }
+  
+  .admin-table th {
+    background-color:#a1c2fa; /* Light background color for the header */
+    font-size: 1rem; /* Slightly larger font size */
+  }
+  
+  .admin-table td {
+    background-color: #ffffff; /* Consistent light color for all cells */
+  }
+  
+  .admin-table tr:hover td {
+    background-color: #f1f1f1; /* Highlight color on hover */
+  }
+  
+  .admin-table a {
+    color: #007bff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%; /* Make the button full-width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  .admin-table a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  

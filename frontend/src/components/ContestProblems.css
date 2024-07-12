@@ -1,0 +1,89 @@
+.contest-problems {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-container button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+ 
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.tab-container button.active,
+.tab-container button:hover {
+  background-color: #4b7fbf;
+}
+
+.problem-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.problem-list li {
+  margin: 10px 0;
+  background-color: #ffffff;
+
+  padding: 10px;
+}
+
+.problem-list li a {
+  color: #4b7fbf;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.problem-list li a:hover {
+  text-decoration: underline;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1c1c2b;
+
+  overflow: hidden;
+  color: white;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.leaderboard-table th {
+  background-color: #4b7fbf;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #2c2c3b;
+}
+
+.leaderboard-table tr:hover {
+  background-color: #555;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+
+  overflow: hidden;
+}
+

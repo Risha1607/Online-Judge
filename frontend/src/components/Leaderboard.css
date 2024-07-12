@@ -1,0 +1,50 @@
+.leaderboard {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.leaderboard h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2rem; /* Smaller heading */
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+}
+
+.leaderboard-table th, .leaderboard-table td {
+  padding: 15px; /* Increased padding for better readability */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+.leaderboard-table th {
+  background-color: #a1c2fa; /* Light background color for the header */
+  font-size: 1rem; /* Slightly larger font size */
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #e6f7ff; /* Lighter color for even rows */
+}
+
+.leaderboard-table tr:nth-child(odd) {
+  background-color: #ffffff; /* White color for odd rows */
+}
+
+.leaderboard-table tr:hover {
+  background-color: #f1f1f1; /* Highlight color on hover */
+}
+
+.leaderboard-table td {
+  background-color: #ffffff; /* Consistent light color for all cells */
+}
