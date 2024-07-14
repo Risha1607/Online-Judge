@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URI = 'http://13.232.237.203:8000';
+const API_URI = import.meta.env.VITE_BACKEND_URL;
 
 export const registerUser = async (data) => {
     try {
@@ -57,9 +57,6 @@ export const getUserData = async (token) => {
         throw error;
     }
 };
-
-
-
 
 export default {
     registerUser,
