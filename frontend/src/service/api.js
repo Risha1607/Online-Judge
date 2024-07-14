@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URI = import.meta.env.VITE_BACKEND_URL;
+const API_URI = 'https://api.codeconquest.online';
 
 export const registerUser = async (data) => {
     try {

@@ -53,7 +53,7 @@ server.on('upgrade', (request, socket, head) => {
 
 // Configure CORS
 const corsOptions = {
-  origin: ['http://localhost:5173', 'http://compiler:3001'], // Add the compiler service's Docker container name
+  origin: ['http://localhost:5173', 'https://online-judge-5hahn0xv4-rishas-projects-afb1f20c.vercel.app', 'https://codeconquest.online'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204
