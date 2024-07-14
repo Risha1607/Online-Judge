@@ -56,7 +56,7 @@ const CreateProblem = () => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.post('http://localhost:8000/problems', problemData, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/problems`, problemData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -165,5 +165,3 @@ const CreateProblem = () => {
 };
 
 export default CreateProblem;
-
-

@@ -16,7 +16,7 @@ const ProfilePage = () => {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:8000/profile', {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -142,4 +142,3 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
-

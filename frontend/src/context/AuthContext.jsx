@@ -1,7 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 
 export const AuthContext = createContext();
 
@@ -43,9 +42,9 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
-      <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+     
         {!loading && children}
-      </GoogleOAuthProvider>
+   
     </AuthContext.Provider>
   );
 };

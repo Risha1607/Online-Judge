@@ -13,11 +13,11 @@ const ContestPage = () => {
   useEffect(() => {
     const fetchContests = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/contests');
-        console.log('Fetched Contests:', response.data); // Log fetched contests
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/contests`);
+        console.log('Fetched Contests:', response.data); 
         setContests(response.data);
       } catch (error) {
-        console.error('Error fetching contests:', error); // Log any errors
+        console.error('Error fetching contests:', error); 
         setError('Error fetching contests');
       } finally {
         setLoading(false);
@@ -34,8 +34,6 @@ const ContestPage = () => {
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
-
-  const currentTime = new Date();
 
   return (
     <div className="contest-page">

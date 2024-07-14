@@ -24,7 +24,7 @@ const ProblemSolving = () => {
   const { contestId, problemTitle } = useParams();
   const { user } = useContext(AuthContext);
   const [problem, setProblem] = useState(null);
-  const [code, setCode] = useState(defaultBoilerplate['cpp']); // Initialize with default boilerplate for 'cpp'
+  const [code, setCode] = useState(defaultBoilerplate['cpp']); 
   const [output, setOutput] = useState('');
   const [language, setLanguage] = useState('cpp');
   const [input, setInput] = useState('');
@@ -40,7 +40,7 @@ const ProblemSolving = () => {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:8000/contests/${contestId}/problem/${problemTitle}`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/contests/${contestId}/problem/${problemTitle}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -68,7 +68,7 @@ const ProblemSolving = () => {
       }
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/get-contest-code/${contestId}/${problemTitle}?language=${language}`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/get-contest-code/${contestId}/${problemTitle}?language=${language}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -99,7 +99,7 @@ const ProblemSolving = () => {
           code,
         };
         await axios.post(
-          'http://localhost:8000/api/save-contest-code',
+          `${import.meta.env.VITE_BACKEND_URL}/api/save-contest-code`,
           payload,
           {
             headers: {
@@ -126,7 +126,7 @@ const ProblemSolving = () => {
       input
     };
     try {
-      const response = await axios.post('http://localhost:3001/run', payload);
+      const response = await axios.post(`${import.meta.env.VITE_COMPILER_URL}/run`, payload);
       setOutput(response.data.output);
     } catch (error) {
       console.error('Error running code:', error);
@@ -150,7 +150,7 @@ const ProblemSolving = () => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/contests/${contestId}/problem/${problemTitle}/submit`,
+        `${import.meta.env.VITE_BACKEND_URL}/contests/${contestId}/problem/${problemTitle}/submit`,
         {
           language,
           code,

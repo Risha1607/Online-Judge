@@ -8,7 +8,7 @@ export const createContest = async (req, res) => {
         startDate,
         endDate,
         problems,
-        createdBy: req.user._id // Use the authenticated user's ID
+        createdBy: req.user._id 
       });
       await contest.save();
       res.status(201).json(contest);
@@ -60,7 +60,7 @@ export const createContest = async (req, res) => {
       if (now < contest.startDate) {
         return res.status(403).json({ error: 'Contest has not started yet' });
       }
-      // Remove the end time check to show ongoing contests
+      
       res.json(contest.problems);
     } catch (error) {
       console.error(error);
@@ -87,26 +87,24 @@ export const createContest = async (req, res) => {
     }
   };
   
-// controller/problemController.js
 
-// controllers/contestController.js
 
 
 
 import Submission from '../models/Submission.js';
 import User from '../models/Users.js';
 
-// Function to compute rankings based on submissions
+
 export const getContestRankings = async (req, res) => {
   try {
     const { contestId } = req.params;
 
-    // Fetch all submissions for the contest
+    
     const submissions = await Submission.find({ contestId }).populate('userId').sort({ submittedAt: 1 });
 
     console.log('Fetched submissions:', submissions);
 
-    // Compute the rankings based on total scores and submission times
+   
     const rankings = submissions.reduce((acc, submission) => {
       const userId = submission.userId._id.toString();
 
@@ -204,10 +202,10 @@ export const ContestsaveUserCode = async (req, res) => {
       );
 
       if (codeEntry) {
-          // Update the existing code entry
+          
           codeEntry.code = code;
       } else {
-          // Add a new code entry
+       
           user.codes.push({ problemTitle, language, code });
       }
 

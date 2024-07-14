@@ -1,5 +1,3 @@
-// src/components/UpdateProblem.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -32,7 +30,7 @@ const UpdateProblem = () => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.put(`http://localhost:8000/problems/${problemId}`, problemData, {
+      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/problems/${problemId}`, problemData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

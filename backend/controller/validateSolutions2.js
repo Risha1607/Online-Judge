@@ -4,6 +4,8 @@ import Submission from '../models/Submission.js';
 import axios from 'axios';
 import { broadcastRankings } from '../index.js';
 
+const COMPILER_URL = process.env.COMPILER_URL || 'http://localhost:3001/run'; // Default to localhost
+
 export const validateSolution2 = async (req, res) => {
   const { language, code } = req.body;
   const { contestId, problemTitle } = req.params;
@@ -40,7 +42,7 @@ export const validateSolution2 = async (req, res) => {
         };
 
         console.log(`Sending payload to compiler: ${JSON.stringify(payload)}`);
-        const response = await axios.post('http://localhost:3001/run', payload);
+        const response = await axios.post(COMPILER_URL, payload); // Use the environment variable
         const output = response.data.output.trim();
         const expectedOutput = testCase.expectedOutput.trim();
 
@@ -57,7 +59,7 @@ export const validateSolution2 = async (req, res) => {
           expectedOutput
         });
       } catch (error) {
-        let errorMessage;
+        let errorMessage = 'Unknown Error';
         if (error.response && error.response.data && error.response.data.message) {
           if (error.response.data.message.includes("TIME LIMIT EXCEEDED")) {
             errorMessage = "Time Limit Exceeded";
@@ -67,7 +69,7 @@ export const validateSolution2 = async (req, res) => {
             errorMessage = "Runtime Error";
           }
         } else {
-          errorMessage = "Unknown Error";
+          errorMessage = error.message || 'Unknown Error';
         }
         console.error(`Error executing code: ${errorMessage}`);
         return res.status(500).json({ success: false, message: errorMessage });
@@ -130,3 +132,5 @@ export const validateSolution2 = async (req, res) => {
     return res.status(500).json({ success: false, message: `Server error: ${error.message}` });
   }
 };
+
+

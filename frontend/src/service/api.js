@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URI = 'http://localhost:8000';
+const API_URI = 'http://13.232.237.203:8000';
 
 export const registerUser = async (data) => {
     try {

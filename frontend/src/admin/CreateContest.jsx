@@ -1,5 +1,3 @@
-// src/components/CreateContest.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -101,7 +99,7 @@ const CreateContest = () => {
             endDate: formattedEndDate
         };
         try {
-            const response = await axios.post('http://localhost:8000/contests', dataToSend, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/contests`, dataToSend, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -222,4 +220,3 @@ const CreateContest = () => {
 };
 
 export default CreateContest;
-

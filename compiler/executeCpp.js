@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { exec, execFile } = require("child_process");
+const { exec } = require("child_process");
 
 const outputPath = path.join(__dirname, "outputs");
 if (!fs.existsSync(outputPath)) {
@@ -9,12 +9,12 @@ if (!fs.existsSync(outputPath)) {
 
 const executeCpp = (filePath, inputfilePath) => {
     const jobId = path.basename(filePath).split(".")[0];
-    const filename = `${jobId}.exe`;
+    const filename = `${jobId}.out`;
     const outPath = path.join(outputPath, filename);
 
     return new Promise((resolve, reject) => {
         const compileCommand = `g++ "${filePath}" -o "${outPath}"`;
-        const executeCommand = `.\\${filename} < "${inputfilePath}"`;
+        const executeCommand = `./${filename} < "${inputfilePath}"`;
 
         exec(compileCommand, (error, stdout, stderr) => {
             if (error) {
@@ -46,4 +46,3 @@ const executeCpp = (filePath, inputfilePath) => {
 module.exports = {
     executeCpp
 };
-

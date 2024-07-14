@@ -1,4 +1,4 @@
-.problem-details-page {
+problem-details-page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -6,17 +6,19 @@
   padding-top: 60px; /* Adjust if needed */
 }
 
+
 .problem-description,
 .code-editor {
   background: #fff;
   color: #000;
   margin: 20px;
- 
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   height: 80vh; /* Adjust height as needed */
   width: 45%; /* Adjust width as needed */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 select {
@@ -63,14 +65,12 @@ button {
   border-radius: 5px;
 }
 
-.timer-container {
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 20px;
-padding-top: 10px;
-padding: left 50%;
-background-color: #2d2d2d;
-border-radius: 5px;
-width: fit-content;
+/* Prevent content from moving */
+.problem-description,
+.code-editor {
+  min-width: 45%; /* Ensure minimum width is consistent */
+}
+
+.problem-details-page {
+  gap: 10px; /* Add gap to ensure consistent spacing */
 }

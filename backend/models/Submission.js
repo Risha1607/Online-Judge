@@ -4,11 +4,11 @@ const submissionSchema = new mongoose.Schema({
   contestId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Contest',
-    required: false, // Make it optional for practice problems
+    required: false, 
   },
   problemId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'problem', // Use the Problem model directly for practice problems
+    ref: 'problem', 
     required: true,
   },
   userId: {

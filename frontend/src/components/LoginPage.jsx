@@ -13,7 +13,7 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#4B7FBF', // Bluish color
+      main: '#4B7FBF', 
     },
     background: {
       default: '#121212',

@@ -1,5 +1,3 @@
-// src/components/UpdateContest.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -79,7 +77,7 @@ const UpdateContest = () => {
       endDate: formattedEndDate
     };
     try {
-      const response = await axios.put(`http://localhost:8000/contests/${contestId}`, dataToSend, {
+      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/contests/${contestId}`, dataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

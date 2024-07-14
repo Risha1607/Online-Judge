@@ -22,7 +22,7 @@ const ProblemDetailsPage = () => {
   const { problemId } = useParams();
   const { user } = useContext(AuthContext);
   const [problem, setProblem] = useState(null);
-  const [code, setCode] = useState(defaultBoilerplate['cpp']); // Initialize with default boilerplate for 'cpp'
+  const [code, setCode] = useState(defaultBoilerplate['cpp']); 
   const [output, setOutput] = useState('');
   const [language, setLanguage] = useState('cpp');
   const [input, setInput] = useState('');
@@ -32,7 +32,7 @@ const ProblemDetailsPage = () => {
   useEffect(() => {
     const fetchProblem = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/problems/${problemId}`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/problems/${problemId}`);
         setProblem(response.data);
       } catch (error) {
         console.error('Error fetching problem:', error);
@@ -49,7 +49,7 @@ const ProblemDetailsPage = () => {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:8000/api/get-code/${problemId}`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/get-code/${problemId}`, {
           params: {
             language,
           },
@@ -73,7 +73,7 @@ const ProblemDetailsPage = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:8000/api/save-code', {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/save-code`, {
         problemId,
         language,
         code,
@@ -103,7 +103,7 @@ const ProblemDetailsPage = () => {
       input
     };
     try {
-      const response = await axios.post('http://localhost:3001/run', payload);
+      const response = await axios.post(`${import.meta.env.VITE_COMPILER_URL}/run`, payload);
       setOutput(response.data.output);
     } catch (error) {
       console.error('Error running code:', error);
@@ -126,7 +126,7 @@ const ProblemDetailsPage = () => {
       return;
     }
     try {
-      const response = await axios.post(`http://localhost:8000/problems/${problemId}/validate`, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/problems/${problemId}/validate`, {
         language,
         code,
       }, {

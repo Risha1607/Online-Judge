@@ -12,18 +12,15 @@ dotenv.config();
 
 const app = express();
 
-// Set up rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
-  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
-// Apply the rate limiting middleware to all requests
 app.use(limiter);
 
-// Initialize WebSocket server
 const wss = new WebSocketServer({ noServer: true });
 
 wss.on('connection', (ws) => {
@@ -46,7 +43,6 @@ export const broadcastRankings = (rankings) => {
   });
 };
 
-// Create HTTP server
 const server = http.createServer(app);
 
 server.on('upgrade', (request, socket, head) => {
@@ -55,7 +51,16 @@ server.on('upgrade', (request, socket, head) => {
   });
 });
 
-app.use(cors());
+// Configure CORS
+const corsOptions = {
+  origin: ['http://localhost:5173', 'http://compiler:3001'], // Add the compiler service's Docker container name
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

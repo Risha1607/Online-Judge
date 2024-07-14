@@ -162,10 +162,7 @@ export const getUserCode = async (req, res) => {
       res.status(500).json({ message: 'Server error' });
     }
   };
-  // controller/Authentication.js
-
-// controller/Authentication.js
-
+  
 
 
 

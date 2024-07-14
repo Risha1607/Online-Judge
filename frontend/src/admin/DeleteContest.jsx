@@ -1,5 +1,3 @@
-// src/components/DeleteContest.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -14,7 +12,7 @@ const DeleteContest = () => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.delete(`http://localhost:8000/contests/${contestId}`, {
+      const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/contests/${contestId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

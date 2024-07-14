@@ -15,7 +15,7 @@ const ContestProblems = () => {
   useEffect(() => {
     const fetchProblems = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/contests/${contestId}/problems`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/contests/${contestId}/problems`);
         console.log('Fetched Problems:', response.data); // Log fetched problems
         if (response.data && Array.isArray(response.data)) {
           setProblems(response.data);
@@ -42,7 +42,7 @@ const ContestProblems = () => {
     const fetchRankings = async () => {
       try {
         const token = localStorage.getItem('token'); // Get token from local storage
-        const response = await axios.get(`http://localhost:8000/contests/${contestId}/rankings`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/contests/${contestId}/rankings`, {
           headers: {
             Authorization: token // Pass token in headers
           }
@@ -64,7 +64,7 @@ const ContestProblems = () => {
 
     // Set up WebSocket connection
     const token = localStorage.getItem('token');
-    const socket = new WebSocket(`ws://localhost:8000?token=${token}`);
+    const socket = new WebSocket(`${import.meta.env.VITE_WEBSOCKET_URL}?token=${token}`);
 
     socket.onopen = () => {
       console.log('WebSocket connected');

@@ -13,8 +13,7 @@ const executePy = (filePath, inputfilePath) => {
 
         exec(command, { timeout: 3000, maxBuffer: 1024*1024*50 }, (error, stdout, stderr) => {
             if (error) {
-                console.error('Exec Error:', error); // Log the full error
-
+                console.error('Exec Error:', error); 
                 if (error.killed) {
                     if (error.signal === 'SIGTERM') {
                         return reject("TIME LIMIT EXCEEDED");

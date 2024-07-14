@@ -23,7 +23,7 @@ const codeSchema = new mongoose.Schema({
     }
 });
 
-// Add custom validation to ensure either problemId or problemTitle is provided
+
 codeSchema.pre('validate', function (next) {
     if (!this.problemId && !this.problemTitle) {
         next(new Error('Either problemId or problemTitle is required'));

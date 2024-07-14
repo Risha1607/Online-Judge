@@ -8,7 +8,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/leaderboard');
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/leaderboard`);
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching leaderboard:', error);
@@ -17,7 +17,7 @@ const Leaderboard = () => {
 
     fetchLeaderboard();
 
-    const socket = new WebSocket('ws://localhost:8000');
+    const socket = new WebSocket(`${import.meta.env.VITE_WEBSOCKET_URL}`);
 
     socket.onopen = () => {
       console.log('WebSocket connected');
@@ -49,7 +49,7 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
+          {users.filter(user => user.firstname && user.lastname && user.totalScore !== undefined).map((user, index) => (
             <tr key={user._id}>
               <td>{index + 1}</td>
               <td>{user.firstname} {user.lastname}</td>
@@ -63,6 +63,7 @@ const Leaderboard = () => {
 };
 
 export default Leaderboard;
+
 
 
 

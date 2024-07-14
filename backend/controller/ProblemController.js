@@ -161,10 +161,10 @@ export const getLeaderboard = async (req, res) => {
           firstname: 1,
           lastname: 1,
           totalScore: 1,
-          lastSubmissionTime: 1  // Project this field for sorting
+          lastSubmissionTime: 1 
         }
       },
-      { $sort: { totalScore: -1, lastSubmissionTime: 1 } }  // Sort by totalScore descending and lastSubmissionTime ascending
+      { $sort: { totalScore: -1, lastSubmissionTime: 1 } }  
     ]);
     res.status(200).json(users);
   } catch (error) {
