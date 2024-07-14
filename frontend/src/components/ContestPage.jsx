@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ContestPage.css';
-import Lottie from 'react-lottie';
+import { Player } from '@lottiefiles/react-lottie-player';
 import animationData from '../assets/animation2.json';
 import { Link } from 'react-router-dom';
 
@@ -26,19 +26,10 @@ const ContestPage = () => {
     fetchContests();
   }, []);
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
-
   return (
     <div className="contest-page">
       <header>
-        <Lottie options={defaultOptions} height={200} width={100} />
+        <Player autoplay loop src={animationData} style={{ height: '300px', width: '300px' }} />
         <h1>Contest</h1>
         <p>Contest every week. Compete and see your ranking!</p>
       </header>
