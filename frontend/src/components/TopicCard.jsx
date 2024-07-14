@@ -7,7 +7,7 @@ const TopicCard = ({ topic }) => {
   return (
     <Link to={`/problems/topic/${topic.key}`} className="topic-card-link">
       <Card className="topic-card">
-        <Card.Img variant="top" src={topic.image} alt={topic.title} className="topic-image" />
+        <Card.Img variant="top" src="/images/coding-image2.png" alt={topic.title} className="topic-image" />
         <Card.Body>
           <Card.Title>{topic.title}</Card.Title>
           <Card.Text className="card-description">{topic.description}</Card.Text>
