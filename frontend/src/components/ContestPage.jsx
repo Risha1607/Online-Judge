@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ContestPage.css';
-import { Player } from '@lottiefiles/react-lottie-player';
+
 import animationData from '../assets/animation2.json';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,13 @@ const ContestPage = () => {
   const [contests, setContests] = useState({ upcoming: [], ongoing: [], ended: [] });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [Player, setPlayer] = useState(null);
 
+  useEffect(() => {
+    import('@lottiefiles/react-lottie-player').then((module) => {
+      setPlayer(module.Player);
+    });
+  }, []);
   useEffect(() => {
     const fetchContests = async () => {
       try {
