@@ -9,7 +9,7 @@ const ContestPage = () => {
   const [contests, setContests] = useState({ upcoming: [], ongoing: [], ended: [] });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [Player, setPlayer] = useState(null);
+  
 
 
   useEffect(() => {
