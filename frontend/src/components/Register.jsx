@@ -1,7 +1,7 @@
 import React, { useState, useContext ,useEffect} from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { Player } from "../../node_modules/@lottiefiles/react-lottie-player";
 import animationData from '../assets/animation.json';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import './Register.css';
@@ -35,13 +35,9 @@ const Register = () => {
     firstname: '',
     lastname: ''
   });
-  const [Player, setPlayer] = useState(null);
+ 
 
-  useEffect(() => {
-    import('@lottiefiles/react-lottie-player').then((module) => {
-      setPlayer(module.Player);
-    });
-  }, []);
+
   const { user, login } = useContext(AuthContext);
   const navigate = useNavigate();
 

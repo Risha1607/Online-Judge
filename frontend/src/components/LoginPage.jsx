@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Box, Button, TextField, Typography, Grid, Link } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { Player } from "../../node_modules/@lottiefiles/react-lottie-player";
 import { useNavigate } from 'react-router-dom';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import './LoginPage.css';
@@ -36,11 +36,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [Player, setPlayer] = useState(null);
 
-  useEffect(() => {
-    import('@lottiefiles/react-lottie-player').then((module) => {
-      setPlayer(module.Player);
-    });
-  }, []);
+
   useEffect(() => {
     if (user) {
       navigate('/problems', { replace: true });
